@@ -6,7 +6,7 @@ import { categories } from './Data';
 
 const Container = styled.div`
   display: flex;
-  padding: 2rem;
+  padding: 1rem;
   justify-content: space-between;
 `;
 
