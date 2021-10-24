@@ -51,7 +51,7 @@ const Slide = styled.div`
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: #${(props) => props.bgColor};
+  background-color: #${(props) => props.bg};
 `;
 const ImgContainer = styled.div`
   flex: 1;
@@ -105,7 +105,7 @@ const Slider = () => {
     if (direction === 'left') {
       setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
     } else {
-      setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
+      setSlideIndex(slideIndex < 3 ? slideIndex + 1 : 0);
     }
   };
   return (

@@ -23,16 +23,16 @@ export const sliderInfo = [
     title: 'Weekend Sales',
     img: 'https://images.unsplash.com/photo-1619533394727-57d522857f89?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDZ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60',
     description: 'This is amazing to see!',
-    bg: 'fcf1ed',
+    bg: 'EAE7D9',
     button: 'Browse Collection',
   },
 
   {
     id: 4,
     title: 'Casual arrivals',
-    img: 'https://images.unsplash.com/photo-1619533394727-57d522857f89?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDZ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60',
+    img: 'https://images.unsplash.com/photo-1583134358100-9d52720d3765?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80',
     description: 'This is amazing to see!',
-    bg: 'fcf1ed',
+    bg: 'F4F4F4',
     button: 'Browse Collection',
   },
 ];
