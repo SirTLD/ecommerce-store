@@ -1,10 +1,12 @@
 import './App.css';
 import Home from './pages/Home';
+import ProductLists from './pages/ProductLists';
 
 function App() {
   return (
     <div>
-      <Home />
+      {/* <Home /> */}
+      <ProductLists />
     </div>
   );
 }

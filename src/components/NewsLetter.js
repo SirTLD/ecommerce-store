@@ -34,6 +34,7 @@ const Input = styled.input`
   flex: 8;
   border: none;
   border-radius: 0.5rem;
+  font-size: 1rem;
 `;
 const Button = styled.button`
   flex: 1;
