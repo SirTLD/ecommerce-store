@@ -20,7 +20,7 @@ const Wrapper = styled.div`
 `;
 
 const LeftItems = styled.div`
-  flex: 1;
+  ${'' /* flex: 1; */}
   display: flex;
   align-items: center;
 `;
@@ -44,8 +44,8 @@ const Input = styled.input`
 // ---------------------------
 
 const CenterItems = styled.div`
-  flex: 1;
-  text-align: center;
+  flex: 5;
+  text-align: left;
 `;
 
 const Brand = styled.h1`
@@ -76,6 +76,12 @@ const Navbar = () => {
     <>
       <Container>
         <Wrapper>
+          <CenterItems>
+            <Brand>
+              <StorefrontOutlined style={{ fontSize: 28 }} />
+              Shoppery
+            </Brand>
+          </CenterItems>
           <LeftItems>
             <Language>EN</Language>
             <SearchContainer>
@@ -85,12 +91,7 @@ const Navbar = () => {
               ></Search>
             </SearchContainer>
           </LeftItems>
-          <CenterItems>
-            <Brand>
-              <StorefrontOutlined style={{ fontSize: 28 }} />
-              Shoppery
-            </Brand>
-          </CenterItems>
+
           <RightItems>
             <MenuItem>Register</MenuItem>
             <MenuItem>Sign In</MenuItem>

@@ -32,6 +32,7 @@ const Arrow = styled.div`
   top: 0;
   bottom: 0;
   margin: auto;
+  z-index: 5;
 
   &:hover {
     background-color: #005691;
@@ -41,7 +42,7 @@ const Arrow = styled.div`
 const Wrapper = styled.div`
   display: flex;
   height: 100%;
-  transform: translateX();
+  transform: translateX(${(props) => props.slideIndex * -100}vw);
 `;
 
 const Slide = styled.div`
@@ -74,7 +75,7 @@ const Description = styled.p`
   margin: 2rem 0;
   text-transform: uppercase;
   font-weight: 500px;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   letter-spacing: 0.3rem;
   width: 80%;
 `;
@@ -82,7 +83,7 @@ const Button = styled.button`
   text-transform: uppercase;
   padding: 1rem;
   font-size: 1.4rem;
-  background-color: white;
+  background-color: transparent;
   cursor: pointer;
   color: #005691;
   border: 0.1rem solid #005691;
@@ -112,7 +113,7 @@ const Slider = () => {
         <Arrow direction="left" onClick={() => handleClick('left')}>
           <ArrowBackIosOutlined style={{ fontSize: 'large' }} />
         </Arrow>
-        <Wrapper>
+        <Wrapper slideIndex={slideIndex}>
           {sliderInfo.map((item) => (
             <Slide bg={item.bg}>
               <ImgContainer>
