@@ -1,10 +1,9 @@
 import {
   ArrowBackIosOutlined,
   ArrowForwardIosOutlined,
-  ArrowLeftOutlined,
-  ArrowRightOutlined,
 } from '@material-ui/icons';
-import React from 'react';
+import React, { useState } from 'react';
+import { sliderInfo } from './Data';
 
 import styled from 'styled-components';
 
@@ -14,6 +13,7 @@ const Container = styled.div`
   display: flex;
   background-color: #e8f1f5;
   position: relative;
+  overflow: hidden;
 `;
 
 const Arrow = styled.div`
@@ -39,32 +39,88 @@ const Arrow = styled.div`
 `;
 
 const Wrapper = styled.div`
+  display: flex;
   height: 100%;
+  transform: translateX();
 `;
 
 const Slide = styled.div`
   display: flex;
   align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #${(props) => props.bgColor};
 `;
 const ImgContainer = styled.div`
   flex: 1;
+  height: 100%;
 `;
 
-const Image = styled.img``;
+const Image = styled.img`
+  margin: 5% 15%;
+  height: 80%;
+`;
 
 const InfoContainer = styled.div`
   flex: 1;
+  padding: 3rem;
+`;
+
+const Title = styled.h1`
+  text-transform: uppercase;
+  font-size: 4rem;
+`;
+const Description = styled.p`
+  margin: 2rem 0;
+  text-transform: uppercase;
+  font-weight: 500px;
+  font-size: 1.8rem;
+  letter-spacing: 0.3rem;
+  width: 80%;
+`;
+const Button = styled.button`
+  text-transform: uppercase;
+  padding: 1rem;
+  font-size: 1.4rem;
+  background-color: white;
+  cursor: pointer;
+  color: #005691;
+  border: 0.1rem solid #005691;
+  border-radius: 1rem;
+  letter-spacing: 0.1rem;
+  transition: 0.5s ease;
+
+  &:hover {
+    background-color: #005691;
+    color: white;
+    border: none;
+  }
 `;
 
 const Slider = () => {
+  const [slideIndex, setSlideIndex] = useState(0);
+  const handleClick = (direction) => {};
   return (
     <>
       <Container>
-        <Arrow direction="left">
+        <Arrow direction="left" onClick={() => handleClick('left')}>
           <ArrowBackIosOutlined style={{ fontSize: 'large' }} />
         </Arrow>
-        <Wrapper></Wrapper>
-        <Arrow direction="right">
+        <Wrapper>
+          {sliderInfo.map((item) => (
+            <Slide bg={item.bg}>
+              <ImgContainer>
+                <Image src={item.img} />
+              </ImgContainer>
+              <InfoContainer>
+                <Title>{item.title}</Title>
+                <Description>{item.description}</Description>
+                <Button>Shop Now</Button>
+              </InfoContainer>
+            </Slide>
+          ))}
+        </Wrapper>
+        <Arrow direction="right" onClick={() => handleClick('right')}>
           <ArrowForwardIosOutlined />
         </Arrow>
       </Container>
