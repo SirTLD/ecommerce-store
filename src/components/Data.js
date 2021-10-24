@@ -55,4 +55,47 @@ export const categories = [
     img: 'https://images.unsplash.com/photo-1606902965551-dce093cda6e7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3BvcnRzJTIwd2VhcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
     title: 'Fitness Look',
   },
+
+  {
+    id: 4,
+    img: 'https://images.unsplash.com/photo-1612784835441-1d8c927793b5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTI2fHxzd2ltd2VhcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+    title: 'Swim Wear',
+  },
+];
+
+export const productItems = [
+  {
+    id: 1,
+    img: 'https://images.unsplash.com/photo-1593030794902-bc14fc210857?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=880&q=80',
+  },
+
+  {
+    id: 2,
+    img: 'https://images.unsplash.com/photo-1593030794902-bc14fc210857?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=880&q=80',
+  },
+
+  {
+    id: 3,
+    img: 'https://images.unsplash.com/photo-1593030794902-bc14fc210857?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=880&q=80',
+  },
+
+  {
+    id: 4,
+    img: 'https://images.unsplash.com/photo-1593030794902-bc14fc210857?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=880&q=80',
+  },
+
+  {
+    id: 5,
+    img: 'https://images.unsplash.com/photo-1593030794902-bc14fc210857?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=880&q=80',
+  },
+
+  {
+    id: 6,
+    img: 'https://images.unsplash.com/photo-1593030794902-bc14fc210857?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=880&q=80',
+  },
+
+  {
+    id: 7,
+    img: 'https://images.unsplash.com/photo-1593030794902-bc14fc210857?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=880&q=80',
+  },
 ];

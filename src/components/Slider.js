@@ -76,14 +76,14 @@ const Description = styled.p`
   margin: 2rem 0;
   text-transform: uppercase;
   font-weight: 500px;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   letter-spacing: 0.3rem;
   width: 80%;
 `;
 const Button = styled.button`
   text-transform: uppercase;
   padding: 1rem;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   background-color: transparent;
   cursor: pointer;
   color: #005691;
