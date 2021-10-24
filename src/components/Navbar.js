@@ -56,6 +56,8 @@ const Brand = styled.h1`
   color: #005691;
   font-size: 2rem;
   cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
 `;
 
 // -------------------------------
@@ -80,10 +82,7 @@ const Navbar = () => {
       <Container>
         <Wrapper>
           <CenterItems>
-            <Brand>
-              <StorefrontOutlined style={{ fontSize: 32 }} />
-              Shoppery
-            </Brand>
+            <Brand>Shoppery</Brand>
           </CenterItems>
           <LeftItems>
             <Language>EN</Language>
