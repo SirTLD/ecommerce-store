@@ -27,20 +27,19 @@ const InputContainer = styled.div`
   display: flex;
   justify-content: space-between;
   border: 0.1rem solid lightgray;
-  border-radius: 0.5rem;
 `;
 const Input = styled.input`
   padding-left: 1rem;
   flex: 8;
   border: none;
-  border-radius: 0.5rem;
+
   font-size: 1rem;
 `;
 const Button = styled.button`
   flex: 1;
   background-color: #005691;
   border: none;
-  border-radius: 0.5rem;
+
   cursor: pointer;
 `;
 

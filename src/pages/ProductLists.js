@@ -29,8 +29,11 @@ const Select = styled.select`
   padding: 0.6rem;
   margin-right: 0.6rem;
   border: 0.1rem solid #005691;
+  text-align: center;
 `;
-const Option = styled.option``;
+const Option = styled.option`
+  text-align: center;
+`;
 
 const ProductLists = () => {
   return (
@@ -62,7 +65,6 @@ const ProductLists = () => {
               <Option>L</Option>
               <Option>XL</Option>
               <Option>XXL</Option>
-              <Option>3XL</Option>
             </Select>
           </Filter>
           <Filter>
@@ -71,10 +73,10 @@ const ProductLists = () => {
               <Option disabled selected>
                 New Arrivals
               </Option>
-              <Option>$5 - 25$</Option>
-              <Option>$5 - 75$</Option>
-              <Option>$75 - 150$</Option>
-              <Option>$75 - 250$</Option>
+              <Option>$5 - $25</Option>
+              <Option>$5 - $75</Option>
+              <Option>$75 - $150</Option>
+              <Option>$75 - $250</Option>
               <Option>Over $250</Option>
             </Select>
           </Filter>
