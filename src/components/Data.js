@@ -66,7 +66,7 @@ export const categories = [
 export const productItems = [
   {
     id: 1,
-    img: 'https://images.unsplash.com/photo-1593030794902-bc14fc210857?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=880&q=80',
+    img: 'https://images.unsplash.com/photo-1590159983013-d4ff5fc71c1d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjh8fHNoaXJ0fGVufDB8MnwwfHw%3D&auto=format&fit=crop&w=500&q=60',
   },
 
   {
@@ -76,7 +76,7 @@ export const productItems = [
 
   {
     id: 3,
-    img: 'https://images.unsplash.com/photo-1593030794902-bc14fc210857?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=880&q=80',
+    img: 'https://images.unsplash.com/photo-1594938291221-94f18cbb5660?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=880&q=80',
   },
 
   {
@@ -86,16 +86,20 @@ export const productItems = [
 
   {
     id: 5,
-    img: 'https://images.unsplash.com/photo-1593030617604-91d25b589e61?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=880&q=80',
+    img: 'https://images.unsplash.com/photo-1589810635657-232948472d98?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=880&q=80',
   },
 
   {
     id: 6,
-    img: 'https://images.unsplash.com/photo-1593030617604-91d25b589e61?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=880&q=80',
+    img: 'https://images.unsplash.com/photo-1594938384824-022767a58e11?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHN1aXR8ZW58MHwyfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
   },
 
   {
     id: 7,
-    img: 'https://images.unsplash.com/photo-1593030794902-bc14fc210857?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=880&q=80',
+    img: 'https://images.unsplash.com/photo-1629949009710-2df14c41a72e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=880&q=80',
+  },
+  {
+    id: 8,
+    img: 'https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=864&q=80',
   },
 ];

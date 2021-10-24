@@ -6,7 +6,7 @@ import ProductItem from './ProductItem';
 const Container = styled.div`
   display: flex;
   flex: 1;
-  margin: 1rem;
+  padding: 1rem;
   flex-wrap: wrap;
   justify-content: space-between;
 `;
