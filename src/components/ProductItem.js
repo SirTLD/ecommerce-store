@@ -28,7 +28,7 @@ const Container = styled.div`
   margin: 0.5rem;
   min-width: 25rem;
   min-height: 25rem;
-  background-color: lightgray;
+  background-color: rgba(220, 240, 240, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;

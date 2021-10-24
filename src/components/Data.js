@@ -100,6 +100,6 @@ export const productItems = [
   },
   {
     id: 8,
-    img: 'https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=864&q=80',
+    img: 'https://images.unsplash.com/photo-1632748914020-941675839f2a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzF8fHNob2VzfGVufDB8MnwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
   },
 ];
