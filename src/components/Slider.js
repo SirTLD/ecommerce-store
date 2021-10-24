@@ -43,6 +43,7 @@ const Wrapper = styled.div`
   display: flex;
   height: 100%;
   transform: translateX(${(props) => props.slideIndex * -100}vw);
+  transition: all 1.5s ease;
 `;
 
 const Slide = styled.div`
