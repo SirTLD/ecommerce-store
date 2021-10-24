@@ -20,7 +20,7 @@ const Wrapper = styled.div`
 `;
 
 const LeftItems = styled.div`
-  ${'' /* flex: 1; */}
+  flex: 1;
   display: flex;
   align-items: center;
 `;
@@ -36,10 +36,13 @@ const SearchContainer = styled.div`
   align-items: center;
   margin-left: 0.5rem;
   padding: 0.5rem;
+  border-radius: 1rem;
 `;
 
 const Input = styled.input`
   border: none;
+  height: 1.4rem;
+  border-radius: 1rem;
 `;
 // ---------------------------
 
@@ -78,7 +81,7 @@ const Navbar = () => {
         <Wrapper>
           <CenterItems>
             <Brand>
-              <StorefrontOutlined style={{ fontSize: 28 }} />
+              <StorefrontOutlined style={{ fontSize: 32 }} />
               Shoppery
             </Brand>
           </CenterItems>
@@ -97,7 +100,9 @@ const Navbar = () => {
             <MenuItem>Sign In</MenuItem>
             <MenuItem>
               <Badge badgeContent={3} color="primary">
-                <ShoppingCartOutlined></ShoppingCartOutlined>
+                <ShoppingCartOutlined
+                  style={{ fontSize: 32 }}
+                ></ShoppingCartOutlined>
               </Badge>
             </MenuItem>
           </RightItems>

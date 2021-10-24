@@ -37,7 +37,7 @@ export const sliderInfo = [
   },
 ];
 
-export const catergories = [
+export const categories = [
   {
     id: 1,
     img: 'https://images.unsplash.com/photo-1584530193960-b4eb6c87081c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=688&q=80',
@@ -52,7 +52,7 @@ export const catergories = [
 
   {
     id: 3,
-    img: 'https://images.unsplash.com/photo-1606902965551-dce093cda6e7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3BvcnRzJTIwd2VhcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+    img: 'https://images.unsplash.com/photo-1606902965551-dce093cda6e7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3BvcnRzJTIwd2VhcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
     title: 'Fitness Look',
   },
 ];
