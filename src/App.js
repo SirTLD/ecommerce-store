@@ -1,6 +1,9 @@
 import './App.css';
+import Cart from './pages/Cart';
 import Home from './pages/Home';
+import Login from './pages/Login';
 import ProductLists from './pages/ProductLists';
+import Register from './pages/Register';
 import SingleProduct from './pages/SingleProduct';
 
 function App() {
@@ -8,7 +11,10 @@ function App() {
     <div>
       {/* <Home /> */}
       {/* <ProductLists /> */}
-      <SingleProduct />
+      {/* <SingleProduct /> */}
+      {/* <Register /> */}
+      {/* <Login /> */}
+      <Cart />
     </div>
   );
 }
