@@ -9,12 +9,12 @@ import SingleProduct from './pages/SingleProduct';
 function App() {
   return (
     <div>
-      {/* <Home /> */}
+      <Home />
       {/* <ProductLists /> */}
       {/* <SingleProduct /> */}
       {/* <Register /> */}
       {/* <Login /> */}
-      <Cart />
+      {/* <Cart /> */}
     </div>
   );
 }
