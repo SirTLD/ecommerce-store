@@ -5,11 +5,15 @@ import styled from 'styled-components';
 import News from '../components/News';
 import Footer from '../components/Footer';
 import { Add, Remove } from '@material-ui/icons';
+import { mobile } from '../responsive';
 
 const Container = styled.div``;
 
 const Wrapper = styled.div`
   padding: 2rem;
+  ${mobile({
+    padding: '0.5rem',
+  })}
 `;
 
 const Title = styled.h1`
@@ -34,7 +38,11 @@ const TopButton = styled.button`
   text-transform: capitalize;
 `;
 
-const TopTexts = styled.div``;
+const TopTexts = styled.div`
+  ${mobile({
+    display: 'none',
+  })}
+`;
 const TopTextItems = styled.span`
   text-decoration: underline;
   cursor: pointer;
@@ -44,6 +52,9 @@ const TopTextItems = styled.span`
 const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
+  ${mobile({
+    flexDirection: 'column',
+  })}
 `;
 const Info = styled.div`
   flex: 3;
@@ -88,6 +99,9 @@ const Button = styled.button`
 const Product = styled.div`
   display: flex;
   justify-content: space-between;
+  ${mobile({
+    flexDirection: 'column',
+  })}
 `;
 const ProductDetail = styled.div`
   flex: 2;
@@ -95,6 +109,11 @@ const ProductDetail = styled.div`
 `;
 const Image = styled.img`
   width: 35rem;
+  ${mobile({
+    width: '13rem',
+    height: '13rem',
+    objectFit: 'cover',
+  })}
 `;
 
 const Details = styled.div`
@@ -112,6 +131,10 @@ const ProductColor = styled.span`
   height: 2.5rem;
   border-radius: 50%;
   background-color: ${(props) => props.color};
+  ${mobile({
+    width: '1.2rem',
+    height: '1.2rem',
+  })}
 `;
 
 const ProductSize = styled.span``;
@@ -126,15 +149,21 @@ const PriceDetail = styled.span`
 const ProductAmountContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
 `;
 const ProductAmount = styled.div`
   font-size: 2rem;
   margin: 0.5rem;
+  ${mobile({
+    margin: '0.5rem 1.2rem',
+  })}
 `;
 const ProductPrice = styled.div`
   font-size: 2.6rem;
   font-weight: 600;
+  ${mobile({
+    marginBottom: '1rem',
+  })}
 `;
 
 const Cart = () => {

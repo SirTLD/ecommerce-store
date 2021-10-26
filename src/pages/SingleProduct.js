@@ -6,11 +6,16 @@ import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import News from '../components/News';
 import NewsLetter from '../components/NewsLetter';
+import { mobile } from '../responsive';
 
 const Container = styled.div``;
 const Wrapper = styled.div`
   display: flex;
   padding: 3rem;
+  ${mobile({
+    padding: '2rem .5rem',
+    flexDirection: 'column',
+  })}
 `;
 const ImgContainer = styled.div`
   flex: 1;
@@ -19,10 +24,16 @@ const Image = styled.img`
   width: 100%;
   height: 80vh;
   object-fit: cover;
+  ${mobile({
+    height: '50vh',
+  })}
 `;
 const InfoContainer = styled.div`
   flex: 1;
   padding: 0 3rem;
+  ${mobile({
+    padding: '0 .5rem',
+  })}
 `;
 const Title = styled.h1``;
 const Description = styled.p`
@@ -37,6 +48,9 @@ const FilterContainer = styled.div`
   justify-content: space-between;
   width: 25%;
   margin: 2rem 0;
+  ${mobile({
+    width: '100%',
+  })}
 `;
 const Filter = styled.div`
   display: flex;
@@ -54,9 +68,14 @@ const FilterColor = styled.div`
   background-color: ${(props) => props.color};
   margin: 0 0.4rem;
   cursor: pointer;
+  ${mobile({
+    width: '1.2rem',
+    height: '1.2rem',
+    margin: '0 0.2rem',
+  })}
 `;
 const FilterSize = styled.select`
-  border: 0.1rem solid #005691;
+  border: 0.1rem solid lightgray;
   padding: 0.6rem;
   text-align: center;
 `;
@@ -67,6 +86,9 @@ const AddContainer = styled.div`
   align-items: center;
   width: 40%;
   justify-content: space-between;
+  ${mobile({
+    width: '100%',
+  })}
 `;
 
 const AmountContainer = styled.div`
@@ -79,7 +101,7 @@ const Amount = styled.span`
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 0.5rem;
-  border: 0.1rem solid #005691;
+  border: 0.1rem solid lightgray;
   display: flex;
   align-items: center;
   justify-content: center;

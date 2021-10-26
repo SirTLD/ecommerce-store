@@ -5,10 +5,14 @@ import Navbar from '../components/Navbar';
 import News from '../components/News';
 import NewsLetter from '../components/NewsLetter';
 import Products from '../components/Products';
+import { mobile } from '../responsive';
 
 const Container = styled.div``;
 const Title = styled.h1`
   margin: 2rem;
+  ${mobile({
+    margin: '1rem .5rem',
+  })}
 `;
 const FilterContainer = styled.div`
   display: flex;
@@ -17,19 +21,31 @@ const FilterContainer = styled.div`
 `;
 const Filter = styled.div`
   margin: 2rem;
+  ${mobile({
+    margin: '0.1rem .5rem',
+    display: 'flex',
+    flexDirection: 'column',
+  })}
 `;
 
 const FilterText = styled.span`
   font-size: 1.8rem;
   font-weigth: 600;
   margin-right: 0.6rem;
+  ${mobile({
+    marginRight: '0rem',
+    fontSize: '1rem',
+  })}
 `;
 
 const Select = styled.select`
   padding: 0.6rem;
   margin-right: 0.6rem;
-  border: 0.1rem solid #005691;
+  border: 0.05rem solid lightgray;
   text-align: center;
+  ${mobile({
+    margin: '.2rem 0',
+  })}
 `;
 const Option = styled.option`
   text-align: center;

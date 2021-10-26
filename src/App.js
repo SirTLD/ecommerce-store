@@ -12,9 +12,9 @@ function App() {
       {/* <Home /> */}
       {/* <ProductLists /> */}
       {/* <SingleProduct /> */}
-      <Register />
+      {/* <Register /> */}
       {/* <Login /> */}
-      {/* <Cart /> */}
+      <Cart />
     </div>
   );
 }
