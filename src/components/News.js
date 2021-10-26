@@ -1,6 +1,7 @@
 import React from 'react';
 
 import styled from 'styled-components';
+import { mobile } from '../responsive';
 
 const Container = styled.div`
   height: 3rem;
@@ -12,12 +13,13 @@ const Container = styled.div`
   font-size: 1.4rem;
   font-weight: bold;
   text-transform: capitalize;
+  ${mobile({ fontSize: '1rem' })}
 `;
 
 const News = () => {
   return (
     <>
-      <Container>Amazing Deals! free shipping on order over $30</Container>
+      <Container>Free shipping and delivery over $30</Container>
     </>
   );
 };

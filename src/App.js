@@ -9,10 +9,10 @@ import SingleProduct from './pages/SingleProduct';
 function App() {
   return (
     <div>
-      <Home />
+      {/* <Home /> */}
       {/* <ProductLists /> */}
       {/* <SingleProduct /> */}
-      {/* <Register /> */}
+      <Register />
       {/* <Login /> */}
       {/* <Cart /> */}
     </div>

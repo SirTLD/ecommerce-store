@@ -72,7 +72,7 @@ const RightItems = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  ${mobile({ flex: 3, justifyContent: 'center' })}
+  ${mobile({ flex: 6, justifyContent: 'center' })}
 `;
 
 const MenuItem = styled.div`
@@ -80,7 +80,7 @@ const MenuItem = styled.div`
   cursor: pointer;
   margin: 0 0.8rem;
   text-transform: uppercase;
-  ${mobile({ fontSize: '.8rem', margin: '0 0.4rem' })}
+  ${mobile({ fontSize: '.7rem', margin: '0 0.4rem' })}
 `;
 
 const Navbar = () => {

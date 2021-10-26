@@ -1,6 +1,7 @@
 import React from 'react';
 
 import styled from 'styled-components';
+import { mobile } from '../responsive';
 
 const Container = styled.div`
   width: 100vw;
@@ -23,6 +24,7 @@ const Wrapper = styled.div`
   width: 20%;
   background-color: white;
   border-radius: 1rem;
+  ${mobile({ width: '70%' })}
 `;
 
 const Title = styled.h1`
@@ -30,6 +32,7 @@ const Title = styled.h1`
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 1rem;
+  ${mobile({ fontSize: '1.5rem' })}
 `;
 const Form = styled.form`
   display: flex;
@@ -50,6 +53,7 @@ const Agreement = styled.span`
   font-size: 1rem;
   font-weight: 100;
   margin: 1rem 0;
+  ${mobile({ fontSize: '.8rem' })}
 `;
 const Button = styled.button`
   text-transform: uppercase;
@@ -74,12 +78,12 @@ const Register = () => {
     <>
       <Container>
         <Wrapper>
-          <Title>Create an Account</Title>
+          <Title>Create Account</Title>
           <Form>
             <Input placeholder="First Name" />
             <Input placeholder="Last Name" />
             <Input placeholder="Email" type="email" />
-            <Input placeholder="Username" />
+            {/* <Input placeholder="Username" /> */}
             <Input placeholder="Password" type="password" />
             <Input placeholder="Confirm Password" type="password" />
             <Agreement>

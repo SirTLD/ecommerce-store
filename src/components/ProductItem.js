@@ -5,6 +5,7 @@ import {
 } from '@material-ui/icons';
 import React from 'react';
 import styled from 'styled-components';
+import { mobile } from '../responsive';
 
 const Info = styled.div`
   opacity: 0;
@@ -33,6 +34,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
+  ${mobile({ width: '40%', height: '18rem', margin: '.5rem 0.5rem' })}
 
   &:hover {
     ${Info} {
@@ -65,33 +67,29 @@ const Image = styled.img`
   max-width: 100%;
   height: auto;
   z-index: 2;
-`;
-
-const Circle = styled.div`
-  width: 25rem;
-  height: 25rem;
-  border-radius: 50%;
-  position: absolute;
+  ${mobile({
+    backgroundPosition: 'center',
+    height: '100%',
+    width: '100%',
+  })}
 `;
 
 const ProductItem = ({ item }) => {
   return (
     <>
       <Container>
-        <Circle>
-          <Image src={item.img} />
-          <Info>
-            <Icon>
-              <ShoppingCartOutlined />
-            </Icon>
-            <Icon>
-              <SearchOutlined />
-            </Icon>
-            <Icon>
-              <FavoriteBorderOutlined />
-            </Icon>
-          </Info>
-        </Circle>
+        <Image src={item.img} />
+        <Info>
+          <Icon>
+            <ShoppingCartOutlined />
+          </Icon>
+          <Icon>
+            <SearchOutlined />
+          </Icon>
+          <Icon>
+            <FavoriteBorderOutlined />
+          </Icon>
+        </Info>
       </Container>
     </>
   );

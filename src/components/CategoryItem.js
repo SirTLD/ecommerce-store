@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { mobile } from '../responsive';
 
 const Container = styled.div`
   flex: 1;
@@ -11,6 +12,7 @@ const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  ${mobile({ height: '50vh' })}
 `;
 const Info = styled.div`
   height: 100%;
@@ -28,6 +30,7 @@ const Title = styled.h1`
   font-size: 3rem;
   text-transform: uppercase;
   margin-bottom: 1rem;
+  ${mobile({ fontSize: '2rem' })}
 `;
 const Button = styled.button`
   text-transform: uppercase;
@@ -40,6 +43,7 @@ const Button = styled.button`
   border-radius: 1rem;
   letter-spacing: 0.1rem;
   transition: 0.5s ease;
+  ${mobile({ fontSize: '1rem' })}
 
   &:hover {
     background-color: #005691;
