@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Cart from './pages/Cart';
 import Home from './pages/Home';
@@ -9,12 +10,12 @@ import SingleProduct from './pages/SingleProduct';
 function App() {
   return (
     <div>
-      {/* <Home /> */}
+      <Home />
       {/* <ProductLists /> */}
       {/* <SingleProduct /> */}
       {/* <Register /> */}
       {/* <Login /> */}
-      <Cart />
+      {/* <Cart /> */}
     </div>
   );
 }

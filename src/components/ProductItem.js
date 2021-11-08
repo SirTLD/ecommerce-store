@@ -75,6 +75,10 @@ const Image = styled.img`
 `;
 
 const ProductItem = ({ item }) => {
+  // console.log(item);
+
+  // return <div>test</div>;
+
   return (
     <>
       <Container>
