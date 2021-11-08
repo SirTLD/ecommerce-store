@@ -1,4 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom';
+
 import './App.css';
 import Cart from './pages/Cart';
 import Home from './pages/Home';
@@ -8,15 +15,30 @@ import Register from './pages/Register';
 import SingleProduct from './pages/SingleProduct';
 
 function App() {
+  const user = true;
   return (
-    <div>
-      <Home />
-      {/* <ProductLists /> */}
-      {/* <SingleProduct /> */}
-      {/* <Register /> */}
-      {/* <Login /> */}
-      {/* <Cart /> */}
-    </div>
+    <>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/products/:category">
+            <ProductLists />
+          </Route>
+          <Route path="/products/:id">
+            <SingleProduct />
+          </Route>
+          <Route path="/register">
+            <Route>{user ? <Redirect to="/" /> : <Register />}</Route>
+          </Route>
+          <Route>{user ? <Redirect to="/" /> : <Login />}</Route>
+          <Route path="/cart">
+            <Cart />
+          </Route>
+        </Switch>
+      </Router>
+    </>
   );
 }
 

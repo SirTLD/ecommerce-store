@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useLocation } from 'react-router';
 import styled from 'styled-components';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
@@ -52,6 +53,18 @@ const Option = styled.option`
 `;
 
 const ProductLists = () => {
+  const location = useLocation();
+  const category = location.pathname.split('/')[2];
+  const [filters, setFilters] = useState({});
+  const [sort, setSort] = useState('New Arrivals');
+
+  const handleFilters = (e) => {
+    const value = e.target.value;
+    setFilters({
+      ...filters,
+      [e.target.name]: value,
+    });
+  };
   return (
     <>
       <Container>
@@ -61,21 +74,17 @@ const ProductLists = () => {
         <FilterContainer>
           <Filter>
             <FilterText>Filter Products: </FilterText>
-            <Select>
-              <Option disabled selected>
-                Style
-              </Option>
-              <Option>Suit</Option>
+            <Select name="style" onChange={handleFilters}>
+              <Option disabled>Color</Option>
+              <Option>Blue</Option>
               <Option>Black</Option>
-              <Option>Shirt</Option>
-              <Option>Dress</Option>
-              <Option>Shoe</Option>
+              <Option>Red</Option>
+              <Option>Gray</Option>
+              <Option>White</Option>
             </Select>
 
-            <Select>
-              <Option disabled selected>
-                Size
-              </Option>
+            <Select name="size" onChange={handleFilters}>
+              <Option disabled>Size</Option>
               <Option>S</Option>
               <Option>M</Option>
               <Option>L</Option>
@@ -85,19 +94,18 @@ const ProductLists = () => {
           </Filter>
           <Filter>
             <FilterText>Sort Products:</FilterText>
-            <Select>
-              <Option disabled selected>
-                New Arrivals
-              </Option>
-              <Option>$5 - $25</Option>
-              <Option>$5 - $75</Option>
-              <Option>$75 - $150</Option>
-              <Option>$75 - $250</Option>
-              <Option>Over $250</Option>
+            <Select
+              onChange={(e) => {
+                setSort(e.target.value);
+              }}
+            >
+              <Option value="New Arrivals">New Arrivals</Option>
+              <Option value="High">Price (High)</Option>
+              <Option value="Low">Price (Low)</Option>
             </Select>
           </Filter>
         </FilterContainer>
-        <Products />
+        <Products category={category} filters={filters} sort={sort} />
         <NewsLetter />
         <Footer />
       </Container>
