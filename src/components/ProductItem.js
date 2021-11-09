@@ -7,6 +7,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { mobile } from '../responsive';
 
+import { Link } from 'react-router-dom';
+
 const Info = styled.div`
   opacity: 0;
   display: flex;
@@ -75,10 +77,6 @@ const Image = styled.img`
 `;
 
 const ProductItem = ({ item }) => {
-  // console.log(item);
-
-  // return <div>test</div>;
-
   return (
     <>
       <Container>
@@ -88,7 +86,9 @@ const ProductItem = ({ item }) => {
             <ShoppingCartOutlined />
           </Icon>
           <Icon>
-            <SearchOutlined />
+            <Link to={`/product/${item._id}`}>
+              <SearchOutlined />
+            </Link>
           </Icon>
           <Icon>
             <FavoriteBorderOutlined />

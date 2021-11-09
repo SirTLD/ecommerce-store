@@ -70,7 +70,7 @@ const ProductLists = () => {
       <Container>
         <Navbar />
         <News />
-        <Title>Outfits</Title>
+        <Title>{category}</Title>
         <FilterContainer>
           <Filter>
             <FilterText>Filter Products: </FilterText>
