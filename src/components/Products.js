@@ -26,6 +26,7 @@ const Products = ({ category, filters, sort }) => {
             ? `http://localhost:5000/api/products?category=${category}`
             : 'http://localhost:5000/api/products'
         );
+        console.log(response);
         setProducts(response.data);
       } catch (err) {
         console.log(err);
@@ -46,7 +47,7 @@ const Products = ({ category, filters, sort }) => {
   }, [products, category, filters]);
 
   useEffect(() => {
-    if (sort === 'New Arrivals') {
+    if (sort === 'newest') {
       setFilteredProducts((prev) =>
         [...prev].sort((a, b) => a.createdAt - b.createdAt)
       );
@@ -66,11 +67,11 @@ const Products = ({ category, filters, sort }) => {
       <Container>
         {category
           ? filteredProducts.map((item) => (
-              <ProductItem item={item} key={item.id} />
+              <ProductItem item={item} key={item._id} />
             ))
           : products
               .slice(0, 8)
-              .map((item) => <ProductItem item={item} key={item.id} />)}
+              .map((item) => <ProductItem item={item} key={item._id} />)}
       </Container>
     </>
   );
