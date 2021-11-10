@@ -9,7 +9,9 @@ import NewsLetter from '../components/NewsLetter';
 import { mobile } from '../responsive';
 import { useLocation } from 'react-router-dom';
 import { publicRequest } from '../requestMethods';
-import axios from 'axios';
+
+import { addProduct } from '../redux/cartRedux';
+import { useDispatch } from 'react-redux';
 
 const Container = styled.div``;
 const Wrapper = styled.div`
@@ -136,6 +138,7 @@ const SingleProduct = () => {
   const [quantity, setQuantity] = useState(1);
   const [color, setColor] = useState('');
   const [size, setSize] = useState('');
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const getProducts = async () => {
@@ -157,7 +160,9 @@ const SingleProduct = () => {
     }
   };
 
-  const handleClick = () => {};
+  const handleClick = () => {
+    dispatch(addProduct({ ...product, quantity, color, size }));
+  };
 
   return (
     <>
@@ -170,12 +175,12 @@ const SingleProduct = () => {
           </ImgContainer>
           <InfoContainer>
             <Title>{product.title}</Title>
-            <Description>{product.description}</Description>
-            <Price>{product.price}</Price>
+            <Description>{product.desc}</Description>
+            <Price>$ {product.price}</Price>
             <FilterContainer>
               <Filter>
                 <FilterTitle>Color</FilterTitle>
-                {product.colors?.map((color) => (
+                {product.color?.map((color) => (
                   <FilterColor
                     color={color}
                     key={color}
@@ -187,7 +192,7 @@ const SingleProduct = () => {
               <Filter>
                 <FilterTitle>Size:</FilterTitle>
                 <FilterSize onChange={(e) => setSize(e.target.value)}>
-                  {product.sizes?.map((size) => (
+                  {product.size?.map((size) => (
                     <FilterSizeOption key={size}>{size}</FilterSizeOption>
                   ))}
                 </FilterSize>

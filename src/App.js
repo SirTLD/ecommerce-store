@@ -26,15 +26,15 @@ function App() {
           <Route path="/products/:category">
             <ProductLists />
           </Route>
-          <Route path="/products/:id">
+          <Route path="/product/:id">
             <SingleProduct />
           </Route>
-          <Route path="/register">
-            <Route>{user ? <Redirect to="/" /> : <Register />}</Route>
-          </Route>
-          <Route>{user ? <Redirect to="/" /> : <Login />}</Route>
           <Route path="/cart">
             <Cart />
+          </Route>
+          <Route path="/login">{user ? <Redirect to="/" /> : <Login />}</Route>
+          <Route path="/register">
+            {user ? <Redirect to="/" /> : <Register />}
           </Route>
         </Switch>
       </Router>

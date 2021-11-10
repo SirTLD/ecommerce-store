@@ -54,17 +54,20 @@ const Option = styled.option`
 
 const ProductLists = () => {
   const location = useLocation();
+
   const category = location.pathname.split('/')[2];
-  const [filters, setFilters] = useState({});
+
+  const [filter, setFilters] = useState({});
   const [sort, setSort] = useState('New Arrivals');
 
   const handleFilters = (e) => {
     const value = e.target.value;
     setFilters({
-      ...filters,
+      ...filter,
       [e.target.name]: value,
     });
   };
+
   return (
     <>
       <Container>
@@ -74,7 +77,7 @@ const ProductLists = () => {
         <FilterContainer>
           <Filter>
             <FilterText>Filter Products: </FilterText>
-            <Select name="style" onChange={handleFilters}>
+            <Select name="color" onChange={handleFilters}>
               <Option disabled>Color</Option>
               <Option>Blue</Option>
               <Option>Black</Option>
@@ -89,23 +92,18 @@ const ProductLists = () => {
               <Option>M</Option>
               <Option>L</Option>
               <Option>XL</Option>
-              <Option>XXL</Option>
             </Select>
           </Filter>
           <Filter>
             <FilterText>Sort Products:</FilterText>
-            <Select
-              onChange={(e) => {
-                setSort(e.target.value);
-              }}
-            >
-              <Option value="New Arrivals">New Arrivals</Option>
-              <Option value="High">Price (High)</Option>
-              <Option value="Low">Price (Low)</Option>
+            <Select onChange={(e) => setSort(e.target.value)}>
+              <Option value="newest">New Arrivals</Option>
+              <Option value="asc">Price (asc)</Option>
+              <Option value="desc">Price (desc)</Option>
             </Select>
           </Filter>
         </FilterContainer>
-        <Products category={category} filters={filters} sort={sort} />
+        <Products category={category} filters={filter} sort={sort} />
         <NewsLetter />
         <Footer />
       </Container>

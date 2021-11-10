@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { productItems } from './Data';
+// import { productItems } from './Data';
 import ProductItem from './ProductItem';
 import { mobile } from '../responsive';
 import axios from 'axios';

@@ -6,6 +6,7 @@ import News from '../components/News';
 import Footer from '../components/Footer';
 import { Add, Remove } from '@material-ui/icons';
 import { mobile } from '../responsive';
+import { useSelector } from 'react-redux';
 
 const Container = styled.div``;
 
@@ -167,13 +168,14 @@ const ProductPrice = styled.div`
 `;
 
 const Cart = () => {
+  const cart = useSelector((state) => state.cart);
   return (
     <>
       <Container>
         <Navbar />
         <News />
         <Wrapper>
-          <Title>your cart</Title>
+          <Title>Your Cart</Title>
           <Top>
             <TopButton>continue shopping</TopButton>
             <TopTexts>
@@ -185,61 +187,40 @@ const Cart = () => {
           </Top>
           <Bottom>
             <Info>
-              <Product>
-                <ProductDetail>
-                  <Image src="https://images.unsplash.com/photo-1587563871167-1ee9c731aefb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1131&q=80" />
-                  <Details>
-                    <ProductName>
-                      <b style={{ marginRight: '.5rem' }}>Product:</b>Stylish
-                      Jackets
-                    </ProductName>
-                    <ProductId>
-                      <b style={{ marginRight: '.5rem' }}>ID:</b>2331453423
-                    </ProductId>
-                    <ProductColor color="black" />
-                    <ProductSize>
-                      <b style={{ marginRight: '.5rem' }}>Size:</b>40
-                    </ProductSize>
-                  </Details>
-                </ProductDetail>
-                <PriceDetail>
-                  <ProductAmountContainer>
-                    <Add />
-                    <ProductAmount>2</ProductAmount>
-                    <Remove />
-                  </ProductAmountContainer>
-                  <ProductPrice>$30</ProductPrice>
-                </PriceDetail>
-              </Product>
+              {cart.products.map((product) => (
+                <Product>
+                  <ProductDetail>
+                    <Image src={product.img} />
+                    <Details>
+                      <ProductName>
+                        <b style={{ marginRight: '.5rem' }}>Product:</b>
+                        {product.title}
+                      </ProductName>
+                      <ProductId>
+                        <b style={{ marginRight: '.5rem' }}>ID:</b>
+                        {product._id}
+                      </ProductId>
+                      <ProductColor color={product.color} />
+                      <ProductSize>
+                        <b style={{ marginRight: '.5rem' }}>Size:</b>
+                        {product.size}
+                      </ProductSize>
+                    </Details>
+                  </ProductDetail>
+                  <PriceDetail>
+                    <ProductAmountContainer>
+                      <Add />
+                      <ProductAmount>{product.quantity}</ProductAmount>
+                      <Remove />
+                    </ProductAmountContainer>
+                    <ProductPrice>
+                      $ {product.price * product.quantity}
+                    </ProductPrice>
+                  </PriceDetail>
+                </Product>
+              ))}
 
               <Hr />
-
-              <Product>
-                <ProductDetail>
-                  <Image src="https://images.unsplash.com/photo-1620231109648-302d034cb29b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80" />
-                  <Details>
-                    <ProductName>
-                      <b style={{ marginRight: '.5rem' }}>Product:</b>Stylish
-                      Jackets
-                    </ProductName>
-                    <ProductId>
-                      <b style={{ marginRight: '.5rem' }}>ID:</b>2331453423
-                    </ProductId>
-                    <ProductColor color="blue" />
-                    <ProductSize>
-                      <b style={{ marginRight: '.5rem' }}>Size:</b>40
-                    </ProductSize>
-                  </Details>
-                </ProductDetail>
-                <PriceDetail>
-                  <ProductAmountContainer>
-                    <Add />
-                    <ProductAmount>2</ProductAmount>
-                    <Remove />
-                  </ProductAmountContainer>
-                  <ProductPrice>$30</ProductPrice>
-                </PriceDetail>
-              </Product>
             </Info>
             <Summary>
               <SummaryTitle>Order Summary </SummaryTitle>
