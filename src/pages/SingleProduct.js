@@ -133,7 +133,9 @@ const Button = styled.button`
 
 const SingleProduct = () => {
   const location = useLocation();
+  console.log(location);
   const id = location.pathname.split('/')[2];
+  console.log(id);
   const [product, setProduct] = useState({});
   const [quantity, setQuantity] = useState(1);
   const [color, setColor] = useState('');
@@ -179,21 +181,17 @@ const SingleProduct = () => {
             <Price>$ {product.price}</Price>
             <FilterContainer>
               <Filter>
-                <FilterTitle>Color</FilterTitle>
-                {product.color?.map((color) => (
-                  <FilterColor
-                    color={color}
-                    key={color}
-                    onClick={() => setColor(color)}
-                  />
+                <FilterTitle>Color:</FilterTitle>
+                {product.color?.map((c) => (
+                  <FilterColor color={c} key={c} onClick={() => setColor(c)} />
                 ))}
               </Filter>
 
               <Filter>
                 <FilterTitle>Size:</FilterTitle>
-                <FilterSize onChange={(e) => setSize(e.target.value)}>
-                  {product.size?.map((size) => (
-                    <FilterSizeOption key={size}>{size}</FilterSizeOption>
+                <FilterSize onChange={(s) => setSize(s.target.value)}>
+                  {product.size?.map((s) => (
+                    <FilterSizeOption key={s}>{s}</FilterSizeOption>
                   ))}
                 </FilterSize>
               </Filter>

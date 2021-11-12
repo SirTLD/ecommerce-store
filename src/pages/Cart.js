@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 
 import styled from 'styled-components';
@@ -7,6 +7,11 @@ import Footer from '../components/Footer';
 import { Add, Remove } from '@material-ui/icons';
 import { mobile } from '../responsive';
 import { useSelector } from 'react-redux';
+import StripeCheckout from 'react-stripe-checkout';
+import { userRequest } from '../requestMethods';
+import { useHistory } from 'react-router';
+
+const KEY = process.env.REACT_APP_STRIPE;
 
 const Container = styled.div``;
 
@@ -169,6 +174,30 @@ const ProductPrice = styled.div`
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
+  const [stripeToken, setStripeToken] = React.useState(null);
+  const history = useHistory();
+
+  const onToken = (token) => {
+    setStripeToken(token);
+  };
+
+  // Stripe.setPublishableKey(KEY);
+
+  console.log(stripeToken);
+
+  useEffect(() => {
+    const makeRequest = async () => {
+      try {
+        const res = await userRequest.post('/checkout/payment', {
+          tokenId: stripeToken.id,
+          amount: 500,
+        });
+        history.push('/success', { data: res.data });
+      } catch (error) {}
+    };
+    stripeToken && makeRequest();
+  }, [stripeToken, cart.total, history]);
+
   return (
     <>
       <Container>
@@ -226,7 +255,7 @@ const Cart = () => {
               <SummaryTitle>Order Summary </SummaryTitle>
               <SummaryItem>
                 <SummaryItemText>Subtotal</SummaryItemText>
-                <SummaryItemPrice>$40</SummaryItemPrice>
+                <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
               </SummaryItem>
 
               <SummaryItem>
@@ -244,7 +273,17 @@ const Cart = () => {
                 <SummaryItemPrice>-$40</SummaryItemPrice>
               </SummaryItem>
 
-              <Button>Purchase Now</Button>
+              <StripeCheckout
+                name="Shoppery"
+                billingAddress
+                shippingAddress
+                description={`Your total is $${cart.total}`}
+                amount={cart.total * 100}
+                token={onToken}
+                stripeKey={KEY}
+              >
+                <Button>Purchase Now</Button>
+              </StripeCheckout>
             </Summary>
           </Bottom>
         </Wrapper>
